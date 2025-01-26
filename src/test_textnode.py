@@ -9,14 +9,15 @@ class TestTextNode(unittest.TestCase):
         node2 = TextNode("This is a text node", TextType.BOLD)
         self.assertEqual(node, node2)
 
-    # def test_eq_with_url(self):
-    #     node = TextNode("This is a text node", TextType.BOLD, "https://example.com")
-    #     node2 = TextNode("This is a text node", TextType.BOLD, "https://example.com")
-    #     self.assertEqual(node, node2)
+    def test_eq_with_url(self):
+        node = TextNode("This is a text node", TextType.BOLD, "https://example.com")
+        node2 = TextNode("This is a text node", TextType.BOLD, "https://example.com")
+        self.assertEqual(node, node2)
 
-    # def test_not_eq(self):
-    #     node = TextNode("This is a text node", TextType.BOLD)
-    #     node2 = TextNode("This is a text node", TextType.BOLD, "https://example.com")
+    def test_not_eq(self):
+        node = TextNode("This is a text node", TextType.BOLD)
+        node2 = TextNode("This is a text node", TextType.BOLD, "https://example.com")
+        self.assertNotEqual(node, node2)
 
 
 class TestTextNodeToHTMLNode(unittest.TestCase):
@@ -37,11 +38,11 @@ class TestTextNodeToHTMLNode(unittest.TestCase):
             {"src": "https://www.boot.dev", "alt": "This is an image"},
         )
 
-    # def test_bold(self):
-    #     node = TextNode("This is bold", TextType.BOLD)
-    #     html_node = text_node_to_html_node(node)
-    #     self.assertEqual(html_node.tag, "b")
-    #     self.assertEqual(html_node.value, "This is bold")
+    def test_bold(self):
+        node = TextNode("This is bold", TextType.BOLD)
+        html_node = text_node_to_html_node(node)
+        self.assertEqual(html_node.tag, "b")
+        self.assertEqual(html_node.value, "This is bold")
 
 
 if __name__ == "__main__":
