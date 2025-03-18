@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-
 from markdown_blocks import markdown_to_html_node
 
 
@@ -44,4 +43,4 @@ def extract_title(md):
     for line in lines:
         if line.startswith("# "):
             return line[2:]
-    raise ValueError("No title found")
+    raise ValueError("no title found")
